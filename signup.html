@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            background-color: #fff;
+            margin-top:50px;
+            margin-bottom: 50px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50rem;
+        }
+        .form-group {
+            margin-bottom: 15px;
+           
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 30rem;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 0.875em;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="signupForm" action="#" method="post">
+            <h2>Sign Up</h2>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="mobileNo">Mobile No:</label>
+                <input type="tel" id="mobileNo" name="mobileNo" pattern="[0-9]{10}" required><br>
+                <small class="error">Please enter a 10-digit mobile number.</small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Set Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <small class="error" id="passwordError"></small>
+            </div>
+            <div class="form-group" >
+                <input type="submit" value="Sign Up" style="width: 200px;  margin-left: 150px;">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('signupForm');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const passwordError = document.getElementById('passwordError');
+
+        form.addEventListener('submit', function(event) {
+            if (password.value !== confirmPassword.value) {
+                passwordError.textContent = 'Passwords do not match.';
+                event.preventDefault();
+            } else {
+                passwordError.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>

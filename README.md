@@ -1,1 +1,2 @@
-# HACKATHON
+# ServiceSphere
+Hackathon
