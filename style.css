@@ -7,7 +7,8 @@
 body{
     font-family: Arial, sans-serif;
     overflow-x: hidden;
-    background-color:transparent;;
+    background-color:transparent;
+    background-color: #FCFCFC;
 }
 /* img{
     height: 75px;
@@ -48,17 +49,18 @@ color: #ff8a00;
 header ul .submenu{
 position: absolute;
 width: 150px;
-background-color:transparent;
+background-color:#FCFCFC;
 box-shadow: 0 20px 45px #99979720;
 margin-top: 0px;
 opacity: 0;
 z-index: -999;
 transition: all ease 0.3s;
+border-radius: 3px;
 }
 header ul li:hover .submenu{
 z-index: 99;
 opacity: 1;
-margin-top: 0;
+margin-top: 3px;
 }
 header ul .submenu li{
 margin:0px;
@@ -85,8 +87,8 @@ border-radius: 12px;
     border:solid rgb(83, 76, 76);
     border-width: 0.3px;
     width: 17rem;
-    height:2.2rem;
-    border-radius: 10px;
+    height:2.1rem;
+    border-radius: 7px;
     margin-left:16rem;
     opacity: 0.4;
 }
@@ -165,7 +167,6 @@ border-radius: 12px;
   /* object-fit: cover; */
   width: 70px;
   height: 70px;
-  
 }
 
 .card h3 {
@@ -200,6 +201,19 @@ border-radius: 12px;
 .card:hover{
   opacity: 0.7;
   box-shadow:0 2px 4px white;
+}
+/* collage */
+.main-container{
+  display: flex;
+}
+.left-div{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-between;
+}
+.right-div{
+  margin: 10px 0px 0px -30px;
 }
  /* slidebar */
  .carousel {
